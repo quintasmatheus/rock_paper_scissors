@@ -1,0 +1,129 @@
+*{
+    font-family: 'Oxygen', sans-serif;
+    background-color:#252525;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* forwards para a #intro ficar com os valores que ficaram definidos no to -> opacity = 1 e translateY(0)
+para aplicarmos a animação feita nas keyFrames usamos a propriedade animation
+*/
+section{
+  opacity: 0;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.intro{
+  margin-top: 5vh;
+   animation: intro-anim 0.8s ease-in-out;
+}
+ @keyframes intro-anim {
+    from {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .is-active{
+    opacity: 1;
+  }
+
+
+.title {
+    text-align: center;
+    font-size: 5em;
+  }
+  
+  .gameName {
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 1rem;
+  }
+
+  #start{
+    color:white;
+    text-align: center;
+    font-size: 3rem;
+    margin-top: 3rem;
+    cursor:pointer;
+    border-radius:10px;
+  }
+
+  /* Hide the wall by default */
+.wall {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: black;
+    z-index: 9999;
+    animation: wall-animation 2s ease-out;
+  }
+  
+  
+  @keyframes wall-animation {
+    0% {
+      height: 0;
+    }
+    50% {
+      height: 100vh;
+    }
+    100%{
+        height: -100vh;
+    }
+  }
+
+  .explanation {
+    margin-top: 5vh;
+    text-align: center;
+    font-size: 3em;
+  }
+
+  .options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.sign{
+  font-size: 80px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+
+.button{
+  margin-top: 10vh;
+  width: 150px;
+  height: 150px;
+  border-radius:30px;
+}
+
+.button:hover{
+  background-color:grey;
+}
+
+.resultParas{
+  color:white;
+  font-size: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.lastResult{
+  margin-top: 10vh;
+}
+
+
+
+  
