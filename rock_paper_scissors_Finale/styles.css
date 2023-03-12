@@ -19,9 +19,9 @@ section{
 }
 .intro{
   margin-top: 5vh;
-   animation: intro-anim 0.8s ease-in-out;
+  animation: anim 1s ease-in-out;
 }
- @keyframes intro-anim {
+ @keyframes anim {
     from {
       opacity: 0;
       transform: translateY(100px);
@@ -32,11 +32,18 @@ section{
     }
   }
 
+  .gameWindow {
+    opacity: 0;
+  }
+
+  .gameWindow.is-active {
+    animation: anim 1s ease-in-out;
+    opacity: 1;
+  }
 
   .is-active{
     opacity: 1;
   }
-
 
 .title {
     text-align: center;
