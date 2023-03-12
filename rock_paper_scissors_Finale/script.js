@@ -51,6 +51,7 @@ let scoreCPU = 0;
 
 function updateScore() {
   score.textContent = `${scoreUser} - ${scoreCPU}`;
+  
 }
 
 const lastResult = document.querySelector('.lastResult');
@@ -75,6 +76,8 @@ let computerSelection=""
 
 const playRound = (playerSelection, computerSelection) =>{
 
+  //este fica em cima pois imaginemos que está 4-4 no inicio da ronda, apenas depois de correr o código todo é que um deles porventura(pode acontecer draw)
+  // irá chegar a 5 de score e aí já não executamos novamente a função playRound
   if(scoreUser >= 5 || scoreCPU >= 5){
     return;
   }
@@ -111,11 +114,14 @@ const playRound = (playerSelection, computerSelection) =>{
   updateScore();
   lastResult.textContent =  "You Win! Scissors beats paper"
  }
+
  if (scoreCPU >= 5 || scoreUser >= 5) {
+  const resultParas = document.querySelector('.resultParas');
+  resultParas.appendChild(createResetButton());
   if (scoreCPU > scoreUser) {
     finalScore.textContent = "Final Score -> CPU wins!!!";  
   } else if (scoreCPU < scoreUser) {
-    finalScore.textContent = "Final Score -> User wins";   
+    finalScore.textContent = "Final Score -> User wins!!!";   
   }
 
 }}
@@ -134,6 +140,22 @@ document.getElementById('scissors').addEventListener("click", () =>{
   playerSelection = "scissors"
   playRound(playerSelection, getComputerChoice());
 });
+
+const createResetButton = () => {
+  const resetGameBtn = document.createElement("button");
+  resetGameBtn.textContent = "Reset Game";
+  resetGameBtn.id = "reset";
+  resetGameBtn.addEventListener("click", () => {
+    scoreUser = 0;
+    scoreCPU = 0;
+    updateScore();
+    finalScore.textContent = "";
+    lastResult.textContent = "";
+    resetGameBtn.style.display = "none";
+  });
+  return resetGameBtn;
+};
+
 
 
 
