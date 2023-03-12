@@ -22,6 +22,7 @@ showWall.addEventListener('click', () => {
   }, 2100); // Adjust the time to match the duration of the animation
 });
 
+
 //função para mudar de section
 const allSections = document.querySelectorAll('section');
 
@@ -35,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
   //adicionar a classe is-active ao id que queremos
   setTimeout(() => {
     document.querySelector('[data-id="' + id + '"]').classList.add('is-active');
-  }, 2000);
+  }, 2200);
 };
   
   showWall.addEventListener('click', () => {
@@ -141,6 +142,8 @@ document.getElementById('scissors').addEventListener("click", () =>{
   playRound(playerSelection, getComputerChoice());
 });
 
+// funçao para criar butao e adicionar um EventListener click, em que se
+// dá reset às vars  e aos paras
 const createResetButton = () => {
   const resetGameBtn = document.createElement("button");
   resetGameBtn.textContent = "Reset Game";
