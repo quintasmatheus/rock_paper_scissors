@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock_Paper_Scissors</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oxygen&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+<section data-id="1" class="intro is-active">
+    <h1 class="title">WELCOME TO THE WORLD CHAMPIONSHIP OF </h1>
+    <span class="gameName">rock, paper, scissors</span>
+    
+        <button id="start">START GAME</button>
+</section>
+
+<div class="wall"></div>
+
+<section data-id="2" class="gameWindow">
+    <h1 class="explanation">Select ROCK, PAPER OR SCISSORS to defeat the CPU</h1>
+
+    <div class="options">
+    <button id="rock" class="button"> <div class="sign">&#9994</div></button>
+    <button id="paper" class="button"><div class="sign">&#9995</div></button>
+    <button id="scissors" class="button"><div class="sign">&#9996</div></button>
+    </div>
+
+    <div class="resultParas">
+        <p class="lastResult"></p>
+        <p class="score"></p>
+        <p class="finalScore"></p>
+    </div>
+    
+</section>
+    <script src="script.js" defer></script>
+</body>
+</html>
