@@ -68,7 +68,7 @@ const getComputerChoice = () =>{
 const playRound = (playerSelection, computerSelection) =>{
         
   if(playerSelection === computerSelection){
-      lastResult.textContent = "This round was a draw"
+      lastResult.textContent = "This round was a drawlez goe"
   }
  if(playerSelection === "rock" && computerSelection === "paper"){
   scoreCPU++;
